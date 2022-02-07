@@ -87,5 +87,80 @@ create table if not exists kiado(
 
 
 
-
 ---------------devecser.sql---------------
+
+-- devecser.sql
+-- 2022-02-07
+
+
+-- A dolgozók nevei és fizetésük
+-- devecserről
+
+select nev, fizetes
+from szemelyek 
+where telepules="Devecser";
+
+select nev as Név, fizetes as Fizetés
+from szemelyek 
+where telepules="Devecser";
+
+-- Hány dolgozó van Devecserről
+
+select count(*) as "Devecseri dolgozók"
+from szemelyek
+where telepules="Devecser";
+
+-- A devecseri dolgozók fizetése osszesen
+
+select sum(fizetes)
+as "Devecseri fizetések összesen"
+from szemelyek
+where telepules="Devecser";
+
+--Mennyi az átlagfizetése a dolgozóknak
+
+select avg(fizetes)
+as "Devecseri fizetések összesen"
+from szemelyek
+where telepules="Devecser";
+
+--Van e miskolci dolgozó 
+
+select telepules
+from szemelyek
+where telepules="Hatvan";
+
+select telepules
+from szemelyek
+where telepules="Miskolc";
+
+select telepules
+from szemelyek
+where telepules="Miskolc" or telepules="Hatvan";
+
+-- A miskolci és hatvani dolgozó nevei és fiztésük,
+-- akiknek a fizetése nagyobb mint 300 ezer.
+
+select nev, fizetes, telepules
+from szemelyek
+where (telepules="Miskolc" or telepules="Hatvan")
+and fizetes>300000;
+
+-- A miskolci és hatvani dolgozók neveit
+-- rendezve név szerint
+
+select nev
+from szemelyek
+where telepules="Miskolc" or telepules="Hatvan"
+order by nev;
+
+select nev
+from szemelyek
+where telepules="Miskolc" or telepules="Hatvan"
+order by nev asc;
+
+
+
+
+
+
