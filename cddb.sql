@@ -1,7 +1,7 @@
 ---------------kekbt.sql----------------
 
 --database.sql
---Délczeg Ádám
+--Nev
 --2022-02-02
 
 --Adatbázis létrehozása
@@ -28,9 +28,6 @@ values
 ("Nyolcas Imre", "Szolnok", 2),
 ("Lenti Ferenc", "Miskolc", 1),
 ("Fenti Katalin", "Hatvan", 1);
-
-
-
 
 
 
