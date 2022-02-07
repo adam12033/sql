@@ -1,3 +1,5 @@
+--------cddb.sql----------
+
 -- nev
 -- datum
 -- osztaly
@@ -39,3 +41,10 @@ create table if not exists kiado(
 	  auto_increment,
 	nev varchar(50)
 ); 
+
+
+
+
+
+
+---------------devecser.sql---------------
