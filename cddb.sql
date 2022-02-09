@@ -180,7 +180,18 @@ order by nev asc;
 select nev, fizetes 
 from szemelyek
 where telepules='Miskolc'
-order by fizetes desc;   --(asc-növekvő,  desc-csökkenő)
+order by fizetes asc;
+
+--Milyen településről vannak dolgozók
+--akiknek a fizetése
+--több mint 400000.
+
+select telepules
+from szemelyek
+where fizetes > 700000
+group by telepules
+;
+
 
 
 
