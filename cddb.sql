@@ -164,3 +164,23 @@ order by nev asc;
 
 
 
+
+
+
+
+
+------------miskolci.sql----------------
+
+--2022-02-09
+--ZoldZrt adatbazis
+
+--Kérdezzükle a miskolci dolgozók
+--neveit, fizetésüket
+--fizetés szerint csökkenő sorrendben.
+select nev, fizetes 
+from szemelyek
+where telepules='Miskolc'
+order by fizetes desc;   --(asc-növekvő,  desc-csökkenő)
+
+
+
