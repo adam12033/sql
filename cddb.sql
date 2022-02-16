@@ -250,6 +250,14 @@ or telepules="Vác"
 or telepules="Paks";
 group by telepules;
 
+4. szúrjon be egy új dolgozót.
+
+insert into szemelyek        (insert or update lehet)
+(nev, telepules)
+values
+('Nagy Pál', 'Szolnok')
+
+
 Összegezni  sum()
 Megszámolni count()
 
