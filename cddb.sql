@@ -195,3 +195,69 @@ group by telepules
 
 
 
+
+
+
+
+
+
+
+
+
+2022-02-16
+Gyakorlás a gyakorlati dolgozatra.
+
+importálja be az adatbázis
+
+xampp-start
+localhost/phpmyadmin-bongeszobe
+
+cditthon
+
+1.Importáljon valamilyen adatbázist
+2.Kérdezzen le adatokat
+  Szúrjon be új adatot
+  Javítson adatot
+  
+1. Kéredezze le a polgári,váci és a paksi dolgozók neveit, fizetésüket, jutalmukat.  
+Egyetlen lekérdezésben.
+
+select nev as Név, fizetes as Fizetés, jutalom as Jutalom
+from szemelyek 
+where 
+telepules="Polgár"
+or telepules="Vác"
+or telepules="Paks";
+
+
+2. Számoltassa meg a polgári, váci és paksi dolgozóknak mennyi egyben az átlagfizetésük.
+
+select avg(fizetés)
+from szemelyek
+where
+telepules="Polgár"
+or telepules="Vác"
+or telepules="Paks";
+
+
+3. Számoltassa meg a polgári, váci és paksi dolgozóknak mennyi az átlagfizetésük településenként.
+
+select avg(fizetés)
+from szemelyek
+where
+telepules="Polgár"
+or telepules="Vác"
+or telepules="Paks";
+group by telepules;
+
+Összegezni  sum()
+Megszámolni count()
+
+Pontozás:
+	importálta (képernyőkép)
+	szimpla  lekérős müködés
+	függvényes működés
+	csoprortosítós
+	.sql fájlba tette
+	Megjegyzésben neve, osztáy, dátum
+	zoldzrt_DA_.sql
