@@ -269,3 +269,114 @@ Pontozás:
 	.sql fájlba tette
 	Megjegyzésben neve, osztáy, dátum
 	zoldzrt_DA_.sql
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------
+
+
+
+
+
+
+Adatbbázis létrehozása
+
+pata
+
+create database pata;
+
+use pata
+kategoriak=(az, szin, marka, ar, kategoriaId)
+kategoriak=(az, nev)
+
+create table kerekparok(
+  az int not null primary key auto_increment,
+  szin varchar(50),
+  marka varchar(50),
+  ar double,
+  kategoriaId int
+);
+
+create table kategoriak (
+  az int not null primary key auto_increment,
+  nev varchar(50)
+);
+
+
+insert into kategoriak
+(nev)
+values
+('városi'),
+('országúti'),
+('gyerek'),
+('elektromos'),
+('trekking');
+
+insert into kerekparok
+(szin, marka, ar, kategoriaId)
+values
+('fehér', 'Csepel', 178900, 5),
+('szürke', 'Neuzer', 172900, 5),
+('fehér', 'KTM', 256850, 5);
+
+
+_____Táblák összekapcsolása____
+
+
+select szin, marka, ar, nev
+from kerekparok inner join kategoriak
+
+
+Mik a kapcsoló mezők????
+
+
+
+select szin, marka, ar, nev
+from kerekparok inner join kategoriak
+on kerekparok.kategoriaid = kategoriak.az
+;
+
+
+
+
+insert into kerekparok
+(szin, marka, ar, kategoriaId)
+values
+('fehér', 'Gepida', 439900, 5);
+
+
+select szin, marka, ar, nev
+from kerekparok inner join kategoriak
+on kerekparok.kategoriaid = kategoriak.az
+;
+
+
+update kerekparok
+set ar=560900
+where az=4
+
+
+
+Esemény: vásárlás
+táblázat
+
+vasarlasok=(az, kerekparAZ, ugyfelAz, datum)
+ugyfelek=(az, nev)
+
+
+winscp
+
+apt install smbclient
+
+smbclient -u diak //172.16.16.16.246/diak
+cd I(n)fra
+cd SajatDir
+put pata.sql
+
