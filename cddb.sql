@@ -380,3 +380,98 @@ cd I(n)fra
 cd SajatDir
 put pata.sql
 
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------
+Linuxon:
+apt update
+apt install mariadb-server
+mysql
+mysql < /home/janos/zoldZrt.sql
+mentés: mysqldump zoldzrt > /home/janos/zoldZrtMentes.sql
+
+winSCP.exe
+
+SCP segítségével feltöltés olyan gépre, ahol van SSH szerver
+SSH szerver
+
+insert into szemelyek
+(nev, fizetes, telepules, jutalom, lakcim, beosztasAz)
+values
+("Lakos Kázmér", 2830000, "Miskolc", 800000, "Pata u. 18.", 2);
+
+select * from Szemelyek where az = 13112 \G
+
+
+insert into beosztasok
+    -> (nev, leiras)
+    -> values
+    -> ("titkár", "");
+
+update szemelyek
+set
+  nev="Gipsz Jakab",
+  anyja_neve="Purhab Mária",
+  telepules="Bugyi",
+  lakcim="Cég utca 12.",
+  fizetes=2121000,
+  szuletes="1996-03-12",
+  jutalom=500,
+  beosztasAz=6
+where
+  az=13112;
+
+Szemelye(az, nev, anyja_neve, telepules, lakcim, fizetes, szuletes, jutalom, beosztasAz)
+Beosztasok(az, nev, leiras)
+
+create table Beosztasok(
+  az int not null primary key auto_increment,
+  nev varchar(50)),
+  leiras text
+  );
+
+
+
+
+___Két táblás gyakorlat__
+Jelenítsük meg a móri dolgozók nevét és beosztását.
+
+select szemelyek.nev, beosztasok.nev 
+from
+  szemelyek inner join Beosztasok
+  on szemelyek.beosztasAz = Beosztasok.az
+
+where
+  telepules="Mór"
+;
+
+
+
+
+
+___unique___(unique egyedivé teszi a mezőt)
+
+create database kontjarmu
+character set utf8
+collate utf8_hungarian_ci;
+
+use kontjarmu
+
+create table jarmuvek (
+  az int not null primary key auto_increment,
+  rendszam varchar(10) unique,
+  marka varchar(50)
+);
+
+insert into jarmuvek
+(az, rendszam, marka)
+values
+(1, "ABC-123", "Opel");
+
