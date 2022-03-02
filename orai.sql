@@ -196,4 +196,28 @@ alter table szemelyek add az int first;
 alter table szemelyek modify az int not null primary key auto_increment;
 
 -----Hozzáadás mező varos
-alter
+alter table szemelyek add varos varchar(20);
+
+-----Fizetes mező
+alter table szemelyek add fizetes double;
+
+-----Cím mező beszúrása a varos után
+alter table szemelyek add cim varchar(20) after varos;
+
+--varos mezű, telepules 
+alter table szemelyek change column varos telepules varchar(20);
+
+
+
+_____Index______
+
+create database
+create table
+create index
+
+
+sezmelyek(az, nev, telepules, cim, fizetes)
+1, Mar Pál, Zalaegerszeg, Tél u. 3, 2830000
+2, Hó Tibor, Szolnok, Tél u, 3, 2230000
+3, Fehér Ödön, Miskolc, Kar u. 5, 2250000
+4, LÓgi Katalin, Aszód, Rét u. 25, 2150000
