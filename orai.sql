@@ -158,3 +158,42 @@ having
   sum(fizetes)< 20000000
 ;
 
+
+
+
+
+
+
+
+2022-03-02
+
+___Adatbázis definíció_____
+
+Database Definition Language
+DDL
+
+create
+drop 
+alter
+rename
+
+___Tábla átnevezése___
+
+create table szemely(nev varchar(20));
+
+rename table szemely to szemelyek;
+
+xampp
+apt install mariadb-server
+systemctl status mariadb
+
+
+create database bibi;
+use bibi
+create table szemely(nev varchar(20));
+rename table szemely to szemelyek;
+alter table szemelyek add az int first;
+alter table szemelyek modify az int not null primary key auto_increment;
+
+-----Hozzáadás mező varos
+alter
