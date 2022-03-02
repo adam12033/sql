@@ -220,4 +220,11 @@ sezmelyek(az, nev, telepules, cim, fizetes)
 1, Mar Pál, Zalaegerszeg, Tél u. 3, 2830000
 2, Hó Tibor, Szolnok, Tél u, 3, 2230000
 3, Fehér Ödön, Miskolc, Kar u. 5, 2250000
-4, LÓgi Katalin, Aszód, Rét u. 25, 2150000
+4, Lógi Katalin, Aszód, Rét u. 25, 2150000
+
+              Index:
+                Aszód
+                Miskolc
+                Szolnok
+                Zalaegerszeg
+                
