@@ -214,6 +214,7 @@ _____Index______
 create database
 create table
 create index
+create view
 
 
 sezmelyek(az, nev, telepules, cim, fizetes)
