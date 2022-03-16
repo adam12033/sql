@@ -229,3 +229,94 @@ sezmelyek(az, nev, telepules, cim, fizetes)
                 Szolnok
                 Zalaegerszeg
                 
+
+
+
+
+
+
+===============================
+2022-03-16
+
+
+____IS NULL____
+
+select * from dolgozok
+where telepules is not null;
+
+ahol a település ismert csak azt
+szeretném megjeleníteni.
+
+scp fer.sql janos@172.16.16.x:
+
+
+
+Jelenítsen meg minden dolgozót akiknek a
+fizetése nagyobb mint 2 millió 
+
+select nev, telepules, fizetes
+from dolgozok
+where
+  fizetes > 2000000
+  and telepules != "Szolnok";
+;
+
+
+Jelenítse mag azokat a dolgozókat, akinek se
+fizetése, se települése nincs beállítva.
+
+insert into dolgozok
+(az, nev)
+values
+(10, "Pontos Ádám")
+(11, "Rejtő Béla")
+(12, "Almás Péter")
+
+select *
+from dolgozok
+where
+  fizetes is not null
+  and telepules is null;
+
+use fer
+vegyen fel új oszlopot 
+a dolgozók táblába.
+telefon varchar(20);
+
+vegye fel az 1-s dolgozónak a
+következő telefonszámot:
+83 824-3432
+
+update dolgozok
+set
+  telefon="83 824-3432"
+where
+  az=2;
+
+select nev, telefon
+from dolgozok;
+
+
+
+83 824-34323
+
+select nev, replace('gépház', 'ház', 'ész' );
+
+
+select nev, replace(telefon, ' ', ') ') telefon
+from dolgozok;
+
+select substring(
+   'gépház', 4);
+
+select nev, concat(  "(", telefon)
+from dolgozok;
+
+
+------
+select nev,
+
+    replace(  concat(  "(", telefon), ' ', ')   )
+
+from dolgozok;
+------
