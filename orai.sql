@@ -316,7 +316,83 @@ from dolgozok;
 ------
 select nev,
 
-    replace(  concat(  "(", telefon), ' ', ')   )
+   replace(  concat(  "(", telefon), ' ', )   )
 
 from dolgozok;
 ------
+
+            
+            
+     
+           
+           (Linuxba zoldZrt.sql importálás)
+
+
+
+apt update
+apt install ssh mariadb-server
+
+scp zoldZrt.sql janos@172.16.16.xy
+
+
+___SSH kapcsolat___
+
+|PC|			|server0|
+p_privát 		p_nyilvános
+p_nyilvános		s_privát	
+s_nyilvános		s_nyilvános
+
+
+létrehozunk
+kulcspár
+
+ls /home/janos (megállapítottuk hogy a zoldzrt itt van)
+
+mariadb < /home/janos/zoldZrt.sql 
+
+mariadb
+use zoldZrt;
+show tables;
+desc Szemelyek;
+
+
+Vegyük azoknak a dolgozóknak az adatait,akiknek a fizetése nagyobb mint 790 ezer.
+
+select telepules, sum(fizetes)
+from Szemelyek
+where fizetes>790000
+group by telepules;
+
+Jelenítsük meg településenként a fizetések összegét.
+Az eredményben csak azok a települések szerepeljenek,
+ahol az összeg nagyobb mint 1 millió.
+
+select telepules, sum(fizetes)
+from Szemelyek
+where fizetes>790000
+group by telepules
+having sum(fizetes) > 1000000
+;
+
+(a kapott eredményt a havinggel szűröm tovább)
+
+
+insert into Szemelyek
+(nev, telepules, fizetes, beosztasAz)
+values
+(" Pali Richard ", " Szeged ", 2300000, 2);
+
+select nev, telepules 
+from Szemelyek
+where telepules="Szeged"
+;
+
+
+select trim(nev), trim(telepules) 
+from Szemelyek
+where trim(telepules)="Szeged"
+;
+
+A trim() 
+leveszi a szóköz9ket és tabulátorokat a szöveg elejéről és vegéről.
+    
