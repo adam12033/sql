@@ -396,3 +396,101 @@ where trim(telepules)="Szeged"
 A trim() 
 leveszi a szóköz9ket és tabulátorokat a szöveg elejéről és vegéről.
     
+
+
+
+
+
+
+
+
+_____Dolgozat jövőhéten_____
+
+db: okta
+create database okta
+character set utf8
+collate utf8_hungarian_ci;
+
+create table kurzusok(
+  kurzus_az int not null primary key auto_increment,
+  kurzus_nev varchar(50),
+  attekintes varchar(200)
+);
+
+describe kurzusok;
+desc kurzusok;
+show create table kurzusok;
+
+
+create table kurzusok(
+  kurzus_az int not null primary key auto_increment,
+  kurzus_nev varchar(50),
+  attekintes varchar(200)
+  primary key(kurzus_az)
+);
+
+insert into kurzusok
+(kurzus_nev)
+values
+("Linux rendszergazda");
+
+select * from kurzusok;
+
+insert into kurzusok
+(attekintes)
+values
+("Boldog rendszergazdák képzése");
+
+
+desc kurzusok;
+
+
+update kurzusok
+set
+  kurzus_nev="Bolodog képzés"
+where
+  kurzus_az = 2;
+
+alter table kurzusok
+modify kurzus_nev varchar(50) not null;
+
+insert into kurzusok
+(kurzus_nev, attekintes)
+values
+("Windows rendszergazda",
+"Windows rendszergazdák képzése");
+
+
+fizetos (igen vagy nem)
+
+alter table kurzusok
+add fizetos boolean;
+
+
+update kurzusok
+set
+  fizetos=1
+where
+  kurzus_az = 2;
+
+create index indexnév
+  on táblanév (mezőnév, ...)
+
+
+create index fizetos_index
+on kurzusok (fizetos);
+
+Ezek lesznek jővőhéten
+
+
+______ER-modell______
+
+Adatbázis tervezéshez használják.
+
+Rendelő
+  orvos
+  páciensek
+  vizsgálat
+
+Entity Relationship => ER
+Egyed Kapcsolat => EK
