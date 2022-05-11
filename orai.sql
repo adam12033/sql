@@ -494,3 +494,110 @@ Rendelő
 
 Entity Relationship => ER
 Egyed Kapcsolat => EK
+
+
+
+
+
+
+
+
+
+
+
+
+=====================================
+2022-05-11
+
+wor
+use wor; 
+
+  employee(id, name, city, salary
+  ranks(id, name)
+
+create datebase wor
+character set utf8
+collate utf8_hunagrian_ci;
+
+grant all privileges
+on wor.*
+to wor@localhost
+identified by 'titok';
+
+create table employees(
+  id int not null primary key auto_increment,
+  name varchar(50)
+  city varchar(50)
+  salary double,
+  rankId int
+);
+
+create table ranks(
+  id int not null primary key auto_increment
+  name varchar(50)
+);
+
+
+
+insert into ranks
+(name)
+values
+('takarító')
+('karbantartó')
+('programozó')
+('rendszergazda');
+
+
+insert into employees
+(name, city, salary, rankId)
+values
+('Parlag imre', 'Szeged', 342, 1),
+('Lapos Lajos', 'Szolnok', 343, 1),
+('Hegy Ferenc', 'Szeged', 359, 2);
+
+
+insert into employees
+(name, city, salary)
+values
+('Pofa Félix', 'Szeged', 542);
+
+
+Melyik dolgozónak mi a beosztása.
+jelenjen meg a dolgozó neve és a beosztása.
+
+select employees.name, ranks.name
+from employees inner join ranks
+on employees.rankId = ranks.Id;
+
+select employees.name, ranks.name
+from employees left join ranks
+on employees.rankId = ranks.Id
+
+union
+
+select employees.name, ranks.name
+from employees right join ranks
+on employees.rankId = ranks.Id;
+
+
+
+create table emp(
+  id int not null primary key aut_increment,
+  name varchar(50) not null,
+  city varchar(50) not null,
+  salary double default 300,      -alap fizetés ebbe a táblába
+  rankId int not null
+);
+
+
+
+
+
+
+
+
+
+insert into em
+(name, city, rankId)
+values
+('Pofa Félix', 'Szeged', 4);
