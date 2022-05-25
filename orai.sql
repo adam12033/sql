@@ -7,10 +7,6 @@ C:\xampp\mysql\bin>mysql -u root -p -h 127.0.0.1
 
 
 
-
-
-
-
  use zoldzrt
 Database changed
 MariaDB [zoldzrt]> select count(*)
