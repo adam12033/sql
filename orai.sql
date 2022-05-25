@@ -1,3 +1,16 @@
+mariadb:
+C:\Users\Diak>cd\
+C:\>cd xampp
+C:\xampp>cd mysql
+C:\xampp\mysql>cd bin
+C:\xampp\mysql\bin>mysql -u root -p -h 127.0.0.1
+
+
+
+
+
+
+
  use zoldzrt
 Database changed
 MariaDB [zoldzrt]> select count(*)
@@ -325,7 +338,7 @@ from dolgozok;
             
      
            
-           (Linuxba zoldZrt.sql importálás)
+           (Linuxba zoldZrt.sql importálás)           
 
 
 
