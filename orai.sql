@@ -1,10 +1,3 @@
-mariadb:
-C:\Users\Diak>cd\
-C:\>cd xampp
-C:\xampp>cd mysql
-C:\xampp\mysql>cd bin
-C:\xampp\mysql\bin>mysql -u root -p -h 127.0.0.1
-
 
 
  use zoldzrt
@@ -610,3 +603,5 @@ insert into em
 (name, city, rankId)
 values
 ('Pofa Félix', 'Szeged', 4);
+
+           
